@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "certificate-cli"
+version = "0.2.2"
+description = ""
+authors = ["Ben Davidson <ben.davidson@dynatrace.com>"]
+readme = "README.md"
+packages = [{include = "certificate_cli"}]
+
+[tool.poetry.scripts]
+certificate_cli = "certificate_cli.main:start_cli"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Flask = "^3.0.3"
+typer = {extras = ["all"], version = "^0.12.4"}
+cryptography = "^43.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
