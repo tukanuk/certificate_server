@@ -74,3 +74,15 @@ $ certificate_cli simulate [OPTIONS] PUBLIC PRIVATE
 
 * `--port INTEGER`: [default: 5678]
 * `--help`: Show this message and exit.
+
+## Build
+
+1. Increment versions in `__init.py__` and `pyproject.toml`
+2. Update changelog (`git log --pretty=format:"%h - %s (%an, %ad)" --date=short` for starters, also see [git-chglog](https://github.com/git-chglog/git-chglog)).
+3. `build` and `publish`
+
+```
+poetry build
+poetry publish
+or 
+poetry publish --build
