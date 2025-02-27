@@ -1,10 +1,19 @@
+[project.urls]
+Homepage = "https://github.com/pypa/sampleproject"
+Issues = "https://github.com/pypa/sampleproject/issues"
+
 [tool.poetry]
 name = "certificate-cli"
-version = "0.2.2"
-description = ""
+version = "0.2.3"
+description = "A collection of tools to aid in certificate testing"
 authors = ["Ben Davidson <ben.davidson@dynatrace.com>"]
 readme = "README.md"
 packages = [{include = "certificate_cli"}]
+classifiers = [
+     "Programming Language :: Python :: 3",
+     "License :: OSI Approved :: MIT License",
+     "Operating System :: OS Independent",
+]
 
 [tool.poetry.scripts]
 certificate_cli = "certificate_cli.main:start_cli"

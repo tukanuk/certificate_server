@@ -1,6 +1,7 @@
 # import argparse
 from logging.config import dictConfig
 from pathlib import Path
+import ssl
 
 import typer
 from flask import Flask
@@ -140,7 +141,8 @@ def simulate(public: str, private: str, port: int = 5678):
     Use --port to specify a port to serve the certificat on.
     """
 
-    context: tuple = (public, private)
+    context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    context.load_cert_chain(certfile=public, keyfile=private)
     flask_app.run(port=port, debug=True, ssl_context=context)
 
 def start_cli():
